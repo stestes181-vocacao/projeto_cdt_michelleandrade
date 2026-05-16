@@ -4,51 +4,352 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patinhas do Bem 🐾</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <div class="container">
 
-    <h1>Patinhas do Bem 🐾</h1>
+    <!-- LOGO -->
+    <div class="logo">
+      <div class="patinha">🐾</div>
+      <h1>Patinhas <span>do Bem</span></h1>
+      <p class="slogan">Adoção de Animais</p>
+    </div>
 
     <div class="pets">
 
-      <!-- PET -->
+      <!-- AMORA -->
       <div class="card">
-
-        <img src="imagens/Amora.jpeg">
-
-        <h2>Amora</h2>
-
-        <p>
-          Brincalhona, dócil, companheira e dorminhoca
-        </p>
-
-        <button>Quero adotar 🐾</button>
-
+        <img src="imagens/Amora.jpeg" alt="Amora" onerror="this.src='https://placekitten.com/300/200'">
+        <div class="card-content">
+          <h2>🐕 Amora</h2>
+          <div class="info-row">
+            <span class="tipo cachorro">🐶 Cachorro</span>
+            <span class="idade">🎂 5 anos</span>
+          </div>
+          <p class="raca">📌 Pitbull</p>
+          <p>Brincalhona, dócil, companheira e dorminhoca</p>
+          <div class="tags">
+            <span class="tag">🐾 Fêmea</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Amora')">Quero adotar 🐾</button>
+        </div>
       </div>
 
-      <!-- PET -->
+      <!-- RALPH -->
       <div class="card">
+        <img src="imagens/Ralph.jpeg" alt="Ralph" onerror="this.src='https://placekitten.com/301/200'">
+        <div class="card-content">
+          <h2>🐕 Ralph</h2>
+          <div class="info-row">
+            <span class="tipo cachorro">🐶 Cachorro</span>
+            <span class="idade">🎂 5 anos</span>
+          </div>
+          <p class="raca">📌 Pitbull</p>
+          <p>Calmo, carinhoso e reativo com alimentos</p>
+          <div class="tags">
+            <span class="tag">🐾 Macho</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Ralph')">Quero adotar 🐾</button>
+        </div>
+      </div>
 
-        <img src="imagens/Ralph.jpeg">
+      <!-- COLAR -->
+      <div class="card">
+        <img src="imagens/Colar.jpeg" alt="Colar" onerror="this.src='https://placekitten.com/302/200'">
+        <div class="card-content">
+          <h2>🐕 Colar</h2>
+          <div class="info-row">
+            <span class="tipo cachorro">🐶 Cachorro</span>
+            <span class="idade">🎂 5 anos</span>
+          </div>
+          <p class="raca">📌 Pitbull</p>
+          <p>Calmo, carinhoso e um pouco tímido</p>
+          <div class="tags">
+            <span class="tag">🐾 Macho</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Colar')">Quero adotar 🐾</button>
+        </div>
+      </div>
 
-        <h2>Ralph</h2>
+      <!-- MARIDO -->
+      <div class="card">
+        <img src="imagens/Marido.jpeg" alt="Marido" onerror="this.src='https://placekitten.com/303/200'">
+        <div class="card-content">
+          <h2>🐱 Marido</h2>
+          <div class="info-row">
+            <span class="tipo gato">😺 Gato</span>
+            <span class="idade">🎂 5 anos</span>
+          </div>
+          <p class="raca">📌 SRD</p>
+          <p>Calmo, carinhoso e possui histórico de problemas urinários</p>
+          <div class="tags">
+            <span class="tag">🐾 Macho</span>
+            <span class="tag cuidado">⚠️ Cuidados especiais</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Marido')">Quero adotar 🐾</button>
+        </div>
+      </div>
 
-        <p>
-          Calmo, carinhoso e reativo com alimentos
-        </p>
+      <!-- LINDA -->
+      <div class="card">
+        <img src="imagens/Linda.jpeg" alt="Linda" onerror="this.src='https://placekitten.com/304/200'">
+        <div class="card-content">
+          <h2>🐕 Linda</h2>
+          <div class="info-row">
+            <span class="tipo cachorro">🐶 Cachorro</span>
+            <span class="idade">🎂 10 anos</span>
+          </div>
+          <p class="raca">📌 Pitbull</p>
+          <p>Calma, idosa e precisa de carinho e cuidados</p>
+          <div class="tags">
+            <span class="tag">🐾 Fêmea</span>
+            <span class="tag idoso">👵 Sênior</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Linda')">Quero adotar 🐾</button>
+        </div>
+      </div>
 
-        <button>Quero adotar 🐾</button>
+      <!-- BOB -->
+      <div class="card">
+        <img src="imagens/Bob.jpeg" alt="Bob" onerror="this.src='https://placekitten.com/305/200'">
+        <div class="card-content">
+          <h2>🐕 Bob</h2>
+          <div class="info-row">
+            <span class="tipo cachorro">🐶 Cachorro</span>
+            <span class="idade">🎂 9 anos</span>
+          </div>
+          <p class="raca">📌 Pitbull</p>
+          <p>Calmo, carinhoso e reativo com outros animais</p>
+          <div class="tags">
+            <span class="tag">🐾 Macho</span>
+            <span class="tag cuidado">⚠️ Reativo</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Bob')">Quero adotar 🐾</button>
+        </div>
+      </div>
 
+      <!-- LILICO -->
+      <div class="card">
+        <img src="imagens/Lilico.jpeg" alt="Lilico" onerror="this.src='https://placekitten.com/306/200'">
+        <div class="card-content">
+          <h2>🐱 Lilico</h2>
+          <div class="info-row">
+            <span class="tipo gato">😺 Gato</span>
+            <span class="idade">🎂 5 anos</span>
+          </div>
+          <p class="raca">📌 SRD</p>
+          <p>Agitado, tímido e demora para se adaptar</p>
+          <div class="tags">
+            <span class="tag">🐾 Macho</span>
+            <span class="tag cuidado">⚠️ Adaptação lenta</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Lilico')">Quero adotar 🐾</button>
+        </div>
+      </div>
+
+      <!-- WILLIE -->
+      <div class="card">
+        <img src="imagens/Willie.jpeg" alt="Willie" onerror="this.src='https://placekitten.com/307/200'">
+        <div class="card-content">
+          <h2>🐕 Willie</h2>
+          <div class="info-row">
+            <span class="tipo cachorro">🐶 Cachorro</span>
+            <span class="idade">🎂 6 anos</span>
+          </div>
+          <p class="raca">📌 Pharaoh Hound</p>
+          <p>Educado, calmo e muito carinhoso</p>
+          <div class="tags">
+            <span class="tag">🐾 Macho</span>
+          </div>
+          <button class="btn-adotar" onclick="abrirFormulario('Willie')">Quero adotar 🐾</button>
+        </div>
       </div>
 
     </div>
 
+    <!-- MODAL DO FORMULÁRIO COMPLETO -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <div class="modal-header">
+          <span class="modal-patinha">🐾</span>
+          <h2>Adotar <span id="petNomeModal"></span></h2>
+          <p class="modal-sub">Responda com carinho ❤️</p>
+        </div>
+        
+        <form id="formAdocao">
+          <!-- INFORMAÇÕES PESSOAIS -->
+          <div class="form-section">
+            <h3>📋 Seus dados</h3>
+            
+            <label>Seu nome completo *</label>
+            <input type="text" id="nomeTutor" required placeholder="Ex: Ana Silva">
+            
+            <label>Seu e-mail *</label>
+            <input type="email" id="emailTutor" required placeholder="exemplo@email.com">
+            
+            <label>Telefone (WhatsApp) *</label>
+            <input type="tel" id="telefone" required placeholder="(11) 99999-9999">
+            
+            <label>Endereço (bairro/cidade) *</label>
+            <input type="text" id="endereco" required placeholder="Ex: Jardins - São Paulo">
+          </div>
+
+          <!-- PERGUNTAS PARA ADOÇÃO -->
+          <div class="form-section">
+            <h3>🏠 Sobre sua casa</h3>
+            
+            <label>Você mora em casa ou apartamento? *</label>
+            <select id="tipoMoradia" required>
+              <option value="">Selecione...</option>
+              <option value="Casa com quintal">Casa com quintal</option>
+              <option value="Casa sem quintal">Casa sem quintal</option>
+              <option value="Apartamento pequeno">Apartamento pequeno</option>
+              <option value="Apartamento grande">Apartamento grande</option>
+            </select>
+            
+            <label>A casa é alugada ou própria? *</label>
+            <select id="tipoCasa" required>
+              <option value="">Selecione...</option>
+              <option value="Própria">Própria</option>
+              <option value="Alugada - com permissão">Alugada - com permissão</option>
+              <option value="Alugada - sem permissão">Alugada - sem permissão</option>
+            </select>
+            
+            <label>Você tem área externa (quintal/sacada)?</label>
+            <select id="areaExterna">
+              <option value="Sim, grande">Sim, grande</option>
+              <option value="Sim, pequena">Sim, pequena</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>👨‍👩‍👧‍👦 Sobre a família</h3>
+            
+            <label>Quantas pessoas moram na casa? *</label>
+            <select id="quantPessoas" required>
+              <option value="">Selecione...</option>
+              <option value="1">1 pessoa</option>
+              <option value="2">2 pessoas</option>
+              <option value="3">3 pessoas</option>
+              <option value="4+">4 ou mais</option>
+            </select>
+            
+            <label>Existem crianças na casa? Se sim, qual a idade? *</label>
+            <input type="text" id="criancas" required placeholder="Ex: Sim, 5 e 8 anos / Não">
+            
+            <label>Todos da casa estão de acordo com a adoção? *</label>
+            <select id="acordoFamiliar" required>
+              <option value="">Selecione...</option>
+              <option value="Sim, todos">Sim, todos</option>
+              <option value="Maioria sim">Maioria sim</option>
+              <option value="Ainda não conversei">Ainda não conversei</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>🐕 Sobre outros animais</h3>
+            
+            <label>Você já tem outros animais? *</label>
+            <select id="outrosAnimais" required>
+              <option value="">Selecione...</option>
+              <option value="Não">Não</option>
+              <option value="Sim, cachorro">Sim, cachorro</option>
+              <option value="Sim, gato">Sim, gato</option>
+              <option value="Sim, ambos">Sim, ambos</option>
+            </select>
+            
+            <label>Se sim, quantos e quais? (Ex: 2 cachorros e 1 gato)</label>
+            <textarea id="detalhesAnimais" rows="2" placeholder="Descreva..."></textarea>
+            
+            <label>Os animais são castrados e vacinados?</label>
+            <select id="cuidadosAnimais">
+              <option value="Sim, todos">Sim, todos</option>
+              <option value="Alguns sim">Alguns sim</option>
+              <option value="Não">Não</option>
+              <option value="Não tenho animais">Não tenho animais</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>💰 Questões financeiras</h3>
+            
+            <label>Você tem condições de arcar com custos como: ração, vet, vacinas, etc? *</label>
+            <select id="condicoesFinanceiras" required>
+              <option value="">Selecione...</option>
+              <option value="Sim, tranquilamente">Sim, tranquilamente</option>
+              <option value="Sim, com planejamento">Sim, com planejamento</option>
+              <option value="Estou me preparando">Estou me preparando</option>
+            </select>
+            
+            <label>Qual valor você estima gastar por mês com o pet?</label>
+            <select id="gastoMensal">
+              <option value="Até R$100">Até R$100</option>
+              <option value="R$100-R$200">R$100 - R$200</option>
+              <option value="R$200-R$400">R$200 - R$400</option>
+              <option value="Acima de R$400">Acima de R$400</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>⏰ Rotina e compromisso</h3>
+            
+            <label>Quantas horas por dia o pet ficará sozinho? *</label>
+            <select id="tempoSozinho" required>
+              <option value="">Selecione...</option>
+              <option value="Pouco (até 4h)">Pouco (até 4h)</option>
+              <option value="Médio (4-8h)">Médio (4-8h)</option>
+              <option value="Muito (mais de 8h)">Muito (mais de 8h)</option>
+            </select>
+            
+            <label>Você tem disponibilidade para passear/brincar diariamente?</label>
+            <select id="disponibilidade">
+              <option value="Sim, bastante">Sim, bastante</option>
+              <option value="Mais ou menos">Mais ou menos</option>
+              <option value="Pouca">Pouca</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>❤️ Sobre a adoção</h3>
+            
+            <label>Por que você quer adotar este animal? *</label>
+            <textarea id="motivo" rows="3" required placeholder="Conte um pouco sobre o que te motivou..."></textarea>
+            
+            <label>Você já teve outros animais? Se sim, o que aconteceu?</label>
+            <textarea id="historicoAnimais" rows="2" placeholder="Ex: Já tive um cachorro que faleceu de velhice..."></textarea>
+            
+            <label>Você concorda em devolver o animal para a ONG se não puder mais ficar com ele? *</label>
+            <select id="termoDevolucao" required>
+              <option value="">Selecione...</option>
+              <option value="Sim, concordo totalmente">Sim, concordo totalmente</option>
+              <option value="Sim, mas tentaria outra solução">Sim, mas tentaria outra solução</option>
+              <option value="Não concordo">Não concordo</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>📝 Informações adicionais</h3>
+            <label>Deixe uma mensagem ou pergunta (opcional):</label>
+            <textarea id="mensagemExtra" rows="2" placeholder="Algo que queira nos dizer..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-enviar">🐾 Enviar solicitação de adoção</button>
+          <p class="form-info">* Campos obrigatórios | Suas respostas nos ajudarão a fazer a melhor match!</p>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>🐾 Adote com amor • Patinhas do Bem 🐾</p>
+      <p class="small">❤️ 8 animais esperando por um lar responsável</p>
+    </footer>
+
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
