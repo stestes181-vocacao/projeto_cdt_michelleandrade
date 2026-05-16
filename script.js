@@ -79,31 +79,31 @@ document.getElementById('formAdocao').addEventListener('submit', async function(
     btn.disabled = true;
     
     try {
-        // Tentar enviar para Google Sheets
-        const response = await fetch(GOOGLE_SHEETS_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(dados)
-        });
-        
-        // Salvar localmente também (backup)
-        salvarLocalmente(dados);
-        
-        // Sucesso
-        alert(🐾 Obrigado ${dados.nome}!\n\nSeu pedido de adoção do(a) ${dados.pet} foi recebido com sucesso!\n\nEntraremos em contato em breve pelo WhatsApp ${dados.telefone}.\n\nAgradecemos seu interesse em dar um lar responsável! 💚);
-        
-        fecharModal();
-        
-    } catch (error) {
-        console.error('Erro:', error);
-        // Se falhar, salva localmente
-        salvarLocalmente(dados);
-        alert(✅ Cadastro salvo localmente!\n\nEntraremos em contato em breve.\n\n(Por motivo técnico, seu cadastro foi salvo no navegador. Em breve entraremos em contato!));
-        fecharModal();
-    }
+    // Tentar enviar para Google Sheets
+    const response = await fetch(GOOGLE_SHEETS_URL, {  // ← G maiúsculo e GOOGLE
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dados)
+    });
+    
+    // Salvar localmente também (backup)
+    salvarLocalmente(dados);
+    
+    // Sucesso
+    alert("🐾 Obrigado " + dados.nome + "! Seu pedido de adoção do(a) " + dados.pet + " foi recebido com sucesso! Entraremos em contato em breve! 💚");
+    
+    fecharModal();
+    
+} catch (error) {
+    console.error('Erro:', error);
+    // Se falhar, salva localmente
+    salvarLocalmente(dados);
+    alert("✅ Cadastro salvo localmente! Entraremos em contato em breve.");
+    fecharModal();
+}
     
     // Resetar botão
     btn.textContent = textoOriginal;
@@ -121,6 +121,6 @@ function salvarLocalmente(dados) {
     const blob = new Blob([JSON.stringify(dados, null, 2)], {type: 'application/json'});
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = adocao_${dados.pet}_${Date.now()}.json;
+    link.download = "adocao_" + dados.pet + "_" + Date.now() + ".json";
     link.click();
 }
