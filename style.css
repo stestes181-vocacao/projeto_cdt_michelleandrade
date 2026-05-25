@@ -363,3 +363,95 @@ footer {
     width: 98%;
   }
 }
+.btn-exportar-container {
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.btn-exportar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-exportar:hover {
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-exportar:active {
+    transform: scale(0.98);
+}
+
+.contador {
+    font-size: 11px;
+    color: #888;
+    margin-top: 10px;
+    text-align: center;
+}.botoes-exportar-container {
+    margin: 20px 0 10px 0;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-exportar {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-cadastros {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+.btn-cadastros:hover {
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-pets {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.btn-pets:hover {
+    background: linear-gradient(135deg, #f57c00, #e65100);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.btn-exportar:active {
+    transform: scale(0.98);
+}
+
+.contador {
+    font-size: 11px;
+    color: #888;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (min-width: 400px) {
+    .btn-group {
+        flex-direction: row;
+        gap: 15px;
+    }
+}

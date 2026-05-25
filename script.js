@@ -124,3 +124,237 @@ function salvarLocalmente(dados) {
     link.download = "adocao_" + dados.pet + "_" + Date.now() + ".json";
     link.click();
 }
+// ========== FUNÇÕES DO BOTÃO EXPORTAR JSON ==========
+
+// Função para exportar TODOS os cadastros
+function exportarTodosCadastros() {
+    let adocoes = localStorage.getItem('adocoes_patinhas');
+    
+    if (adocoes) {
+        adocoes = JSON.parse(adocoes);
+        
+        if (adocoes.length === 0) {
+            alert('❌ Nenhum cadastro encontrado ainda!');
+            return;
+        }
+        
+        // Criar o arquivo JSON com todos os cadastros
+        const dadosJson = JSON.stringify(adocoes, null, 2);
+        const blob = new Blob([dadosJson], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        
+        // Criar link para download
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `adocoes_patinhas_${new Date().toLocaleDateString()}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert(`✅ ${adocoes.length} cadastro(s) exportado(s) com sucesso!`);
+        
+    } else {
+        alert('❌ Nenhum cadastro encontrado ainda!');
+    }
+}
+
+// Mostrar quantos cadastros já foram feitos
+function atualizarContadorCadastros() {
+    let adocoes = localStorage.getItem('adocoes_patinhas');
+    let count = adocoes ? JSON.parse(adocoes).length : 0;
+    
+    // Verificar se já existe o contador, se não, criar
+    let contador = document.getElementById('contadorCadastros');
+    if (!contador) {
+        const footer = document.querySelector('footer');
+        if (footer) {
+            const novoContador = document.createElement('p');
+            novoContador.id = 'contadorCadastros';
+            novoContador.className = 'contador';
+            novoContador.style.fontSize = '11px';
+            novoContador.style.marginTop = '10px';
+            novoContador.style.color = '#888';
+            footer.appendChild(novoContador);
+            contador = novoContador;
+        }
+    }
+    
+    if (contador) {
+        contador.textContent = `📋 ${count} cadastro(s) de adoção registrado(s)`;
+    }
+}
+// ========== BOTÃO 1: EXPORTAR CADASTROS (adoções feitas) ==========
+
+function exportarCadastros() {
+    let adocoes = localStorage.getItem('adocoes_patinhas');
+    
+    if (adocoes) {
+        adocoes = JSON.parse(adocoes);
+        
+        if (adocoes.length === 0) {
+            alert('❌ Nenhum cadastro de adoção encontrado ainda!');
+            return;
+        }
+        
+        const dadosJson = JSON.stringify(adocoes, null, 2);
+        const blob = new Blob([dadosJson], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `cadastros_adocoes_${new Date().toLocaleDateString()}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert(`✅ ${adocoes.length} cadastro(s) de adoção exportado(s)!`);
+        
+    } else {
+        alert('❌ Nenhum cadastro de adoção encontrado ainda!');
+    }
+}
+
+// ========== BOTÃO 2: EXPORTAR DADOS DOS PETS (lista de animais) ==========
+
+function exportarPets() {
+    const pets = [
+        {
+            nome: "Amora",
+            tipo: "Cachorro",
+            idade: 5,
+            raca: "Pitbull",
+            sexo: "Fêmea",
+            descricao: "Brincalhona, dócil, companheira e dorminhoca"
+        },
+        {
+            nome: "Ralph",
+            tipo: "Cachorro",
+            idade: 5,
+            raca: "Pitbull",
+            sexo: "Macho",
+            descricao: "Calmo, carinhoso e reativo com alimentos"
+        },
+        {
+            nome: "Colar",
+            tipo: "Cachorro",
+            idade: 5,
+            raca: "Pitbull",
+            sexo: "Macho",
+            descricao: "Calmo, carinhoso e um pouco tímido"
+        },
+        {
+            nome: "Marido",
+            tipo: "Gato",
+            idade: 5,
+            raca: "SRD",
+            sexo: "Macho",
+            descricao: "Calmo, carinhoso e possui histórico de problemas urinários"
+        },
+        {
+            nome: "Linda",
+            tipo: "Cachorro",
+            idade: 10,
+            raca: "Pitbull",
+            sexo: "Fêmea",
+            descricao: "Calma, idosa e precisa de carinho e cuidados"
+        },
+        {
+            nome: "Bob",
+            tipo: "Cachorro",
+            idade: 9,
+            raca: "Pitbull",
+            sexo: "Macho",
+            descricao: "Calmo, carinhoso e reativo com outros animais"
+        },
+        {
+            nome: "Lilico",
+            tipo: "Gato",
+            idade: 5,
+            raca: "SRD",
+            sexo: "Macho",
+            descricao: "Agitado, tímido e demora para se adaptar"
+        },
+        {
+            nome: "Willie",
+            tipo: "Cachorro",
+            idade: 6,
+            raca: "Pharaoh Hound",
+            sexo: "Macho",
+            descricao: "Educado, calmo e muito carinhoso"
+        }
+    ];
+    
+    const dadosJson = JSON.stringify(pets, null, 2);
+    const blob = new Blob([dadosJson], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `lista_pets_patinhas_${new Date().toLocaleDateString()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    alert(`✅ ${pets.length} pets exportados com sucesso!`);
+}
+
+// ========== CRIAR OS DOIS BOTÕES ==========
+
+function criarBotoesExportar() {
+    // Verificar se os botões já existem
+    if (document.getElementById('btnExportarCadastros')) return;
+    
+    const container = document.querySelector('.pets');
+    if (!container) return;
+    
+    const btnContainer = document.createElement('div');
+    btnContainer.className = 'botoes-exportar-container';
+    btnContainer.innerHTML = `
+        <div class="btn-group">
+            <button id="btnExportarCadastros" class="btn-exportar btn-cadastros">
+                📋 Exportar CADASTROS (adoções)
+            </button>
+            <button id="btnExportarPets" class="btn-exportar btn-pets">
+                🐾 Exportar PETS (animais)
+            </button>
+        </div>
+    `;
+    
+    // Inserir depois dos cards
+    container.parentNode.insertBefore(btnContainer, document.querySelector('footer'));
+    
+    // Adicionar eventos
+    document.getElementById('btnExportarCadastros').addEventListener('click', exportarCadastros);
+    document.getElementById('btnExportarPets').addEventListener('click', exportarPets);
+}
+
+// Mostrar quantos cadastros já foram feitos
+function atualizarContadorCadastros() {
+    let adocoes = localStorage.getItem('adocoes_patinhas');
+    let count = adocoes ? JSON.parse(adocoes).length : 0;
+    
+    let contador = document.getElementById('contadorCadastros');
+    if (!contador) {
+        const footer = document.querySelector('footer');
+        if (footer) {
+            const novoContador = document.createElement('p');
+            novoContador.id = 'contadorCadastros';
+            novoContador.className = 'contador';
+            footer.appendChild(novoContador);
+            contador = novoContador;
+        }
+    }
+    
+    if (contador) {
+        contador.textContent = `📋 ${count} cadastro(s) de adoção registrado(s)`;
+    }
+}
+
+// Chamar as funções quando a página carregar
+window.addEventListener('load', function() {
+    criarBotoesExportar();
+    atualizarContadorCadastros();
+});
