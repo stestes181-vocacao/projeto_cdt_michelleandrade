@@ -32,8 +32,13 @@ body {
 }
 
 @keyframes balancar {
-  0%, 100% { transform: rotate(-10deg); }
-  50% { transform: rotate(10deg); }
+  0%, 100% { 
+    transform: rotate(-10deg); 
+  }
+
+  50% { 
+    transform: rotate(10deg); 
+  }
 }
 
 .logo h1 {
@@ -67,7 +72,7 @@ body {
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .card:hover {
@@ -75,10 +80,18 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
+/* IMAGENS */
 .card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
 }
 
 .card-content {
@@ -159,17 +172,23 @@ body {
   color: #00695c;
 }
 
-.btn-adotar {
-  background: linear-gradient(135deg, #66bb6a, #43a047);
+/* BOTÕES */
+.btn-adotar,
+.btn-exportar,
+.btn-enviar {
   border: none;
   padding: 12px 20px;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
   width: 100%;
+  transition: all 0.3s ease;
+}
+
+.btn-adotar {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
 }
 
 .btn-adotar:hover {
@@ -178,7 +197,37 @@ body {
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-.btn-adotar:active {
+.btn-cadastros {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+.btn-cadastros:hover {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  transform: scale(1.02);
+}
+
+.btn-pets {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.btn-pets:hover {
+  background: linear-gradient(135deg, #f57c00, #e65100);
+  transform: scale(1.02);
+}
+
+.btn-enviar {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  transform: scale(1.02);
+}
+
+.btn-adotar:active,
+.btn-exportar:active,
+.btn-enviar:active {
   transform: scale(0.98);
 }
 
@@ -197,8 +246,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0; 
+  }
+
+  to { 
+    opacity: 1; 
+  }
 }
 
 .modal-content {
@@ -219,6 +273,7 @@ body {
     transform: translateY(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -228,7 +283,6 @@ body {
 .close {
   position: sticky;
   top: 0;
-  right: 0;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -290,7 +344,9 @@ form label {
   font-size: 13px;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   width: 100%;
   padding: 10px;
   border: 2px solid #e0e0e0;
@@ -300,28 +356,11 @@ form input, form select, form textarea {
   font-family: inherit;
 }
 
-form input:focus, form select:focus, form textarea:focus {
+form input:focus,
+form select:focus,
+form textarea:focus {
   outline: none;
   border-color: #4caf50;
-}
-
-.btn-enviar {
-  background: linear-gradient(135deg, #66bb6a, #43a047);
-  border: none;
-  padding: 14px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
-  transition: all 0.3s ease;
-}
-
-.btn-enviar:hover {
-  background: linear-gradient(135deg, #4caf50, #2e7d32);
-  transform: scale(1.02);
 }
 
 .form-info {
@@ -329,6 +368,24 @@ form input:focus, form select:focus, form textarea:focus {
   color: #999;
   text-align: center;
   margin-top: 15px;
+}
+
+/* EXPORTAÇÃO */
+.botoes-exportar-container {
+  margin: 20px 0 10px 0;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contador {
+  font-size: 11px;
+  color: #888;
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* RODAPÉ */
@@ -349,109 +406,26 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 480px) {
+
   .container {
     padding: 15px;
   }
-  
+
   .card h2 {
     font-size: 20px;
   }
-  
+
   .modal-content {
     margin: 10px auto;
     padding: 20px;
     width: 98%;
   }
 }
-.btn-exportar-container {
-    text-align: center;
-    margin: 20px 0 10px 0;
-}
-
-.btn-exportar {
-    background: linear-gradient(135deg, #2196f3, #1976d2);
-    border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.btn-exportar:hover {
-    background: linear-gradient(135deg, #1976d2, #0d47a1);
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
-}
-
-.btn-exportar:active {
-    transform: scale(0.98);
-}
-
-.contador {
-    font-size: 11px;
-    color: #888;
-    margin-top: 10px;
-    text-align: center;
-}.botoes-exportar-container {
-    margin: 20px 0 10px 0;
-}
-
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.btn-exportar {
-    border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.btn-cadastros {
-    background: linear-gradient(135deg, #2196f3, #1976d2);
-}
-
-.btn-cadastros:hover {
-    background: linear-gradient(135deg, #1976d2, #0d47a1);
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
-}
-
-.btn-pets {
-    background: linear-gradient(135deg, #ff9800, #f57c00);
-}
-
-.btn-pets:hover {
-    background: linear-gradient(135deg, #f57c00, #e65100);
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
-}
-
-.btn-exportar:active {
-    transform: scale(0.98);
-}
-
-.contador {
-    font-size: 11px;
-    color: #888;
-    margin-top: 10px;
-    text-align: center;
-}
 
 @media (min-width: 400px) {
-    .btn-group {
-        flex-direction: row;
-        gap: 15px;
-    }
+
+  .btn-group {
+    flex-direction: row;
+    gap: 15px;
+  }
 }
