@@ -26,11 +26,11 @@ Vercel
 📁 Estrutura do Projeto
 Bash
 📦 patinhas-do-bem
- ┣ 📂 imagens
- ┣ 📜 index.html
- ┣ 📜 style.css
- ┣ 📜 script.js
- ┗ 📜 README.md
+┣ 📂 imagens
+┣ 📜 index.html
+┣ 📜 style.css
+┣ 📜 script.js
+┗ 📜 README.md
  
 💡 Objetivo
 O principal objetivo do projeto é incentivar a adoção de animais e praticar conhecimentos de desenvolvimento web através de um tema social e acolhedor.
